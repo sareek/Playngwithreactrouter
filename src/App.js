@@ -7,6 +7,7 @@ import Form from "./components/Form";
 import NameList from "./components/NameList";
 import { routes } from "./routes/routes";
 import Protected from "./components/Protected";
+import Page404NotFound from "./components/Page404NotFound";
 class App extends React.Component {
   state = {
     name: "React",
@@ -23,8 +24,10 @@ class App extends React.Component {
               render={(props) => <BoilerPlate {...props} />}
             ></Route>
             <Protected exact path="/" component={Form} />
-            <Protected exact path={routes.PERSONALINFO} component={Form} />
+
             <Protected exact path={routes.OVERVIEW} component={NameList} />
+            <Protected exact path={routes.PERSONALINFO} component={Form} />
+            <Route component={Page404NotFound} />
           </Switch>
         </div>
       </Router>

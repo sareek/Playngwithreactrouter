@@ -100,6 +100,10 @@ export default class NamingForm extends Component {
     e.preventDefault();
     console.log("enter values");
   };
+  handleLogOut = () => {
+    localStorage.removeItem("login");
+    this.props.history.push(routes.HOME);
+  };
   render() {
     return (
       <>
@@ -171,6 +175,13 @@ export default class NamingForm extends Component {
               {this.state.emailError}
             </p>
             <button type="submit">Submit</button>
+            <button
+              type="name"
+              style={{ marginLeft: "10px" }}
+              onClick={this.handleLogOut}
+            >
+              LogOut
+            </button>
           </form>
         </section>
       </>

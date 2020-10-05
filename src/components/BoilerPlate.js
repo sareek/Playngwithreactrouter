@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { routes } from "../routes/routes";
 
 export default class BoilerPlate extends Component {
   state = { name: "", data: [] };
