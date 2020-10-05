@@ -1,0 +1,33 @@
+.background {
+  background: #4a5859;
+  height: 100vh;
+  width: 100vw;
+}
+.Boiler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: fantasy;
+  height: 100vh;
+  width: 100vw;
+}
+.form-label {
+  font-weight: bold;
+  font-family: fantasy;
+}
+
+form {
+  margin: 2rem;
+}
+input {
+  display: block;
+}
+.label {
+  color: #ff7d00;
+  font-family: fantasy;
+  font-size: large;
+}
+
+.btn {
+  background: #ff7d00;
+}
