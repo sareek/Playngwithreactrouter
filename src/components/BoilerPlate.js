@@ -39,7 +39,7 @@ export default class BoilerPlate extends Component {
             <Card.Text style={{ marginLeft: "7rem" }}>
               <input
                 type="name"
-                placeholder="enter typicode"
+                placeholder="enter validator"
                 onChange={this.handleName}
                 value={this.state.username}
                 style={{ background: "#4a5859" }}
