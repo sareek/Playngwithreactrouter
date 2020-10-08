@@ -104,12 +104,14 @@ export default class NamingForm extends Component {
     localStorage.removeItem("login");
     this.props.history.push(routes.HOME);
   };
+  goBack = () => this.props.history.goBack();
   render() {
     return (
       <>
-        <Link to={routes.HOME}>
-          <Button variant="dark">Go Back</Button>
-        </Link>
+        <Button variant="dark" onClick={this.goBack}>
+          Go Back
+        </Button>
+
         <section className="Boiler">
           <form
             onSubmit={

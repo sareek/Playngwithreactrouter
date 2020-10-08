@@ -2,7 +2,7 @@ import React from "react";
 import { ListGroup, Button } from "react-bootstrap";
 export default class NameList extends React.Component {
   state = { data: JSON.parse(localStorage.getItem("data")) };
-  handleOnClick = () => this.props.history.push("/presonal-info");
+  handleOnClick = () => this.props.history.goBack();
   render() {
     return (
       <>
