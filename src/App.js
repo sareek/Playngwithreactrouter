@@ -7,27 +7,27 @@ import Form from "./components/Form";
 import NameList from "./components/NameList";
 import { routes } from "./routes/routes";
 import Protected from "./components/Protected";
-import Page404NotFound from "./components/Page404NotFound";
+import ErrorPage from "./components/ErrorPage";
 class App extends React.Component {
   state = {
     name: "React",
     isUserAuthenticated: false,
   };
   render() {
+    const { HOME, PERSONALINFO, OVERVIEW } = routes;
     return (
       <Router>
         <div className="background">
           <Switch>
             <Route
               exact
-              path={routes.HOME}
+              path={HOME}
               render={(props) => <BoilerPlate {...props} />}
             ></Route>
             <Protected exact path="/" component={Form} />
-
-            <Protected exact path={routes.OVERVIEW} component={NameList} />
-            <Protected exact path={routes.PERSONALINFO} component={Form} />
-            <Route component={Page404NotFound} />
+            <Protected exact path={PERSONALINFO} component={Form} />
+            <Protected exact path={OVERVIEW} component={NameList} />
+            <Route exact path="" component={ErrorPage} />
           </Switch>
         </div>
       </Router>

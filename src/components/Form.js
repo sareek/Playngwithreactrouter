@@ -100,18 +100,12 @@ export default class NamingForm extends Component {
     e.preventDefault();
     console.log("enter values");
   };
-  handleLogOut = () => {
-    localStorage.removeItem("login");
-    this.props.history.push(routes.HOME);
-  };
-  goBack = () => this.props.history.goBack();
   render() {
     return (
       <>
-        <Button variant="dark" onClick={this.goBack}>
-          Go Back
-        </Button>
-
+        <Link to={routes.HOME}>
+          <Button variant="dark">Go Back</Button>
+        </Link>
         <section className="Boiler">
           <form
             onSubmit={
@@ -123,7 +117,7 @@ export default class NamingForm extends Component {
                 : this.handleEmptyForm
             }
           >
-            <label for="firstName" className="label">
+            <label htmlFor="firstName" className="label">
               FirstName
             </label>
             <input
@@ -137,7 +131,7 @@ export default class NamingForm extends Component {
               {this.state.nameError}
             </p>
 
-            <label for="lastName" className="label">
+            <label htmlFor="lastName" className="label">
               LastName
             </label>
             <input
@@ -150,7 +144,7 @@ export default class NamingForm extends Component {
             <p style={{ color: "red", fontSize: "12px" }}>
               {this.state.lastNameError}
             </p>
-            <label for="address" className="label">
+            <label htmlFor="address" className="label">
               Address
             </label>
             <input
@@ -163,7 +157,7 @@ export default class NamingForm extends Component {
             <p style={{ color: "red", fontSize: "12px" }}>
               {this.state.addressError}
             </p>
-            <label for="email" className="label">
+            <label htmlFor="email" className="label">
               Email
             </label>
             <input
@@ -177,13 +171,6 @@ export default class NamingForm extends Component {
               {this.state.emailError}
             </p>
             <button type="submit">Submit</button>
-            <button
-              type="name"
-              style={{ marginLeft: "10px" }}
-              onClick={this.handleLogOut}
-            >
-              LogOut
-            </button>
           </form>
         </section>
       </>

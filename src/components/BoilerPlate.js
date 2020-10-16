@@ -3,6 +3,15 @@ import { Card, Button } from "react-bootstrap";
 
 export default class BoilerPlate extends Component {
   state = { name: "", data: [] };
+
+ componentDidMount() {
+   const item = JSON.parse(localStorage.getItem("login"));
+   if(item && item[0].name === 'Bitsbeat'){
+     console.log(item[0].name === "Bitsbeat")
+     this.props.history.push("/");
+   }
+ }
+
   handleName = (e) => {
     this.setState({ name: e.target.value });
   };
@@ -15,7 +24,7 @@ export default class BoilerPlate extends Component {
       response.json().then((data) => {
         if (data.length > 0) {
           localStorage.setItem("login", JSON.stringify(data));
-          console.log(this.props.history.push("/presonal-info"));
+          this.props.history.push("/presonal-info");
         } else {
           alert("Enter true data");
         }
